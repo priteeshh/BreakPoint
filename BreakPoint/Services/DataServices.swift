@@ -34,5 +34,12 @@ class DataServices {
     func cerateDBUser(uid: String, userData: Dictionary<String,Any>) {
         REF_USERS.child(uid).updateChildValues(userData)
     }
-    
+    func uploadPost(withMessage message: String, forUid uid : String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status : Bool)->()){
+        if groupKey != nil{
+            
+        }else{
+            REF_FEEDS.childByAutoId().updateChildValues(["content":message,"senderID":uid])
+            sendComplete(true)
+        }
+    }
 }

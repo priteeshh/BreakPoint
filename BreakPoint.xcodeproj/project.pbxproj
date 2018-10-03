@@ -20,6 +20,7 @@
 		30ED85262163790000F5E540 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30ED85252163790000F5E540 /* Assets.xcassets */; };
 		30ED85292163790000F5E540 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30ED85272163790000F5E540 /* LaunchScreen.storyboard */; };
 		30ED853621637A1C00F5E540 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30ED853521637A1C00F5E540 /* GoogleService-Info.plist */; };
+		30F4FBDF2164CED20020FEE0 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F4FBDE2164CED20020FEE0 /* CreatePostVC.swift */; };
 		7E4900D6E896ADE5DCBC892D /* Pods_BreakPoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5251AD53571C0C0437E5D370 /* Pods_BreakPoint.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		30ED85282163790000F5E540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30ED852A2163790000F5E540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30ED853521637A1C00F5E540 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		30F4FBDE2164CED20020FEE0 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		5251AD53571C0C0437E5D370 /* Pods_BreakPoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakPoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0F32334C7C585C1457A4E1 /* Pods-BreakPoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPoint.release.xcconfig"; path = "Pods/Target Support Files/Pods-BreakPoint/Pods-BreakPoint.release.xcconfig"; sourceTree = "<group>"; };
 		E608B8269A64DBD0962C1F79 /* Pods-BreakPoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPoint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BreakPoint/Pods-BreakPoint.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				30E51A482163946B0080E546 /* AuthVC.swift */,
 				30E51A4A216394790080E546 /* LoginVC.swift */,
 				30E51A4E2163B29E0080E546 /* MeVC.swift */,
+				30F4FBDE2164CED20020FEE0 /* CreatePostVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30F4FBDF2164CED20020FEE0 /* CreatePostVC.swift in Sources */,
 				30E51A492163946B0080E546 /* AuthVC.swift in Sources */,
 				30ED8521216378FF00F5E540 /* GroupsVC.swift in Sources */,
 				30E51A4B216394790080E546 /* LoginVC.swift in Sources */,
