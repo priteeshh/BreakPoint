@@ -34,12 +34,36 @@ class DataServices {
     func cerateDBUser(uid: String, userData: Dictionary<String,Any>) {
         REF_USERS.child(uid).updateChildValues(userData)
     }
+    func getUserName(forUID uid: String, handler : @escaping (_ username: String)->()){
+        REF_USERS.observeSingleEvent(of: .value) { (userSnapShot) in
+            guard let userSnapShot = userSnapShot.children.allObjects as? [DataSnapshot] else {return}
+            for user in userSnapShot{
+                if user.key == uid{
+                    handler(user.childSnapshot(forPath: "email").value as! String)
+                }
+            }
+            
+        }
+    }
     func uploadPost(withMessage message: String, forUid uid : String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status : Bool)->()){
         if groupKey != nil{
             
         }else{
             REF_FEEDS.childByAutoId().updateChildValues(["content":message,"senderID":uid])
             sendComplete(true)
+        }
+    }
+    func getAllFeedMessages(handler: @escaping(_ messages:[Message]) -> ()){
+        var messageArray = [Message]()
+        REF_FEEDS.observeSingleEvent(of: .value) { (feedMessageSnapshot) in
+            guard let feedMessageSnapshot = feedMessageSnapshot.children.allObjects as? [DataSnapshot] else{return}
+            for message in feedMessageSnapshot{
+                let content = message.childSnapshot(forPath: "content").value as! String
+                let senderID = message.childSnapshot(forPath: "senderID").value as! String
+                let message = Message(content: content, senderId: senderID)
+                messageArray.append(message)
+            }
+            handler(messageArray)
         }
     }
 }

@@ -18,8 +18,8 @@ class LoginVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func signInBtnTapped(_ sender: Any) {
-        if loginEmail != nil && loginPassword != nil{
-            AuthService.instance.loginUser(withEmail: loginPassword.text!, andPassword: loginPassword.text!) { (success, loginError) in
+        if loginEmail.text != nil && loginPassword.text != nil{
+            AuthService.instance.loginUser(withEmail: loginEmail.text!, andPassword: loginPassword.text!) { (success, loginError) in
                 if success{
                     self.dismiss(animated: true, completion: nil)
                 }else{
@@ -32,7 +32,6 @@ class LoginVC: UIViewController {
                                 self.dismiss(animated: true, completion: nil)
                             }else{
                                 print(String(describing: errorr?.localizedDescription))
-
                             }
                             
                         })

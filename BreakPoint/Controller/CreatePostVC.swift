@@ -18,6 +18,7 @@ class CreatePostVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         postMessageTextView.delegate = self
+        sendBtn.bindToKeyboard()
 
     }
     @IBAction func closeBtnTapped(_ sender: Any) {
